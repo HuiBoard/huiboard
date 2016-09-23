@@ -1,8 +1,8 @@
 * HuiBoard
 
-HuiBoard™ is a five or ten key keyboard that is one possible implimentation of the ET Language™. HuiBoard is powered by Common Lisp and Arduino. You can easily [[file:hackers.org][make your own HuiBoard]], or buy one from our [[file:store.org][custom keyboard shop]].
+HuiBoard™ is a five or ten key keyboard that is one possible implimentation of the ET Language™. HuiBoard is powered by Common Lisp and Arduino. You can easily [[ http://huiboard.com/hackers.html][make your own HuiBoard]], or buy one from our [[ http://huiboard.com/store.html][custom keyboard shop]].
 
-see http://huiboard.com for more details.
+See http://huiboard.com for more details and documentation on how to use HuiBoard.
 
 Currently in early prototype stage, but quite useable. Feedback is very welcome!
 
