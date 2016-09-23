@@ -35,7 +35,7 @@ The HuiBoard Manager package is named :huim. Loading it with Quicklisp:
 (ql:quickload :huim)
 #+END_SRC
 
-Then make sure the *serial-port-path* variable points to your Arduino tty file. It should be listed in your /dev folder under the name ttyUSB0 or ttyACM0, possibly with different numbers.
+Then make sure the **serial-port-path** variable points to your Arduino tty file. It should be listed in your /dev folder under the name ttyUSB0 or ttyACM0, possibly with different numbers.
 
 #+BEGIN_SRC lisp
 (setf huim:*serial-port-path* #P"/dev/ttyACM0")
