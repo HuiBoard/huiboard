@@ -4,14 +4,57 @@ HuiBoard™ is a five or ten key keyboard that is one possible implimentation of
 
 see http://huiboard.com for more details.
 
+Currently in early prototype stage, but quite useable. Feedback is very welcome!
+
 * Installation
+** Linux machine
+Currently tested on Ubuntu 14.04 using SBCL. It should work on any system where xdotool works. Windows, Mac, and Android support coming soon.
 
-Currently tested on Ubuntu 14.04 using SBCL.
+You'll need SBCL, Quicklisp, xdotool, and cl-serial to get started. The first three are installable using apt-get. 
 
-You'll need SBCL, Quicklisp, xdotool, and cl-serial to get started. The first three are installable using apt-get, and cl-serial is available here: https://github.com/shamazmazum/cl-serial
-
+On Ubuntu:
 #+BEGIN_SRC sh
 sudo apt-get install sbcl cl-quicklisp xdotool
 #+END_SRC
 
+Clone both cl-serial and this repository into your quicklisp/local-projects folder.
+
+Get cl-serial here: https://github.com/shamazmazum/cl-serial
+
+Then from the SBCL REPL run
+#+BEGIN_SRC lisp
+(ql:register-local-projects)
+#+END_SRC
+so Quicklisp can find cl-serial and HuiBoard.
+** Arduino
 To set up the Arduino you'll need the Arduino IDE, or your preferred method of flashing.
+* Running
+The HuiBoard Manager package is named :huim. Loading it with Quicklisp:
+
+#+BEGIN_SRC lisp
+(ql:quickload :huim)
+#+END_SRC
+
+Then make sure the \*serial-port-path\* variable points to your Arduino tty file. It should be listed in your /dev folder under the name ttyUSB0 or ttyACM0, possibly with different numbers.
+
+#+BEGIN_SRC lisp
+(setf huim:*serial-port-path* #P"/dev/ttyACM0")
+#+END_SRC
+
+There are then two options for starting the main loop. On a BeagleBone or Rasberry Pi (ARM processors), SBCL is not threaded, so run:
+
+#+BEGIN_SRC lisp
+(huim:main-loop)
+#+END_SRC
+
+If you want to use HuiBoard with Emacs and SLIME, or just run it as a background thread so you can still use the Lisp REPL - use Bordeaux Threads:
+
+#+BEGIN_SRC lisp
+(ql:quickload :bordeaux-threads)
+
+(bt:make-thread 'huim:main-loop "huim")
+#+END_SRC
+
+Type away!
+
+Feedback and suggestions to huiboard-at-gmail-com.
