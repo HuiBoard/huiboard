@@ -1,1 +1,17 @@
 * HuiBoard
+
+HuiBoard™ is a five or ten key keyboard that is one possible implimentation of the ET Language™. HuiBoard is powered by Common Lisp and Arduino. You can easily [[file:hackers.org][make your own HuiBoard]], or buy one from our [[file:store.org][custom keyboard shop]].
+
+see http://huiboard.com for more details.
+
+* Installation
+
+Currently tested on Ubuntu 14.04 using SBCL.
+
+You'll need SBCL, Quicklisp, xdotool, and cl-serial to get started. The first three are installable using apt-get, and cl-serial is available here: https://github.com/shamazmazum/cl-serial
+
+#+BEGIN_SRC sh
+sudo apt-get install sbcl cl-quicklisp xdotool
+#+END_SRC
+
+To set up the Arduino you'll need the Arduino IDE, or your preferred method of flashing.
