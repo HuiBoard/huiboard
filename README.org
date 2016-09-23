@@ -1,10 +1,10 @@
 * HuiBoard
 
-HuiBoard™ is a five or ten key keyboard that is one possible implimentation of the ET Language™. HuiBoard is powered by Common Lisp and Arduino. You can easily [[ http://huiboard.com/hackers.html][make your own HuiBoard]], or buy one from our [[ http://huiboard.com/store.html][custom keyboard shop]].
+HuiBoard™ is a five or ten key keyboard that is one possible implimentation of the ET Language™. HuiBoard is powered by Common Lisp and Arduino. You can easily make your own HuiBoard, or buy one from our custom keyboard shop.
 
 See http://huiboard.com for more details and documentation on how to use HuiBoard.
 
-Currently in early prototype stage, but quite useable. Feedback is very welcome!
+Currently in early prototype stage, but quite useable and powerful. Feedback is very welcome!
 
 * Installation
 ** Linux machine
@@ -29,7 +29,7 @@ so Quicklisp can find cl-serial and HuiBoard.
 ** Arduino
 To set up the Arduino you'll need the Arduino IDE, or your preferred method of flashing.
 * Running
-The HuiBoard Manager package is named :huim. Loading it with Quicklisp:
+The HuiBoard Manager package is named :huim. Load it with Quicklisp:
 
 #+BEGIN_SRC lisp
 (ql:quickload :huim)
@@ -51,7 +51,6 @@ If you want to use HuiBoard with Emacs and SLIME, or just run it as a background
 
 #+BEGIN_SRC lisp
 (ql:quickload :bordeaux-threads)
-
 (bt:make-thread 'huim:main-loop "huim")
 #+END_SRC
 
