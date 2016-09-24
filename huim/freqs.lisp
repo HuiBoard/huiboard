@@ -1,5 +1,9 @@
 ;; Word frequencies are from Peter Norvigs site -  http://norvig.com/mayzner.html, specifically the file http://norvig.com/google-books-common-words.txt the contents of which are below.
 
+;; The page at http://norvig.com/ngrams/ suggests that it is released under the MIT license which can be found at http://www.opensource.org/licenses/mit-license.php.
+
+;; The contents have been changed slightly, by changing tabs to spaces, and some Lisp essentials to integrate it into the package.
+
 (in-package #:huim)
 
 (defvar *freqs* "THE 53097401461
