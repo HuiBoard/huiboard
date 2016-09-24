@@ -67,7 +67,7 @@ Type away!
 
 Feedback and suggestions to huiboard-at-gmail-com.
 
-#+BEGIN_HTML
+
 <table align="center">
   <tbody>
     <tr>
@@ -84,4 +84,4 @@ Feedback and suggestions to huiboard-at-gmail-com.
     </tr>
   </tbody>
 </table>
-#+END_HTML
+
