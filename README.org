@@ -6,7 +6,7 @@ HuiBoard is powered by Common Lisp and Arduino. You can easily make your own Hui
 
 See http://huiboard.com for more details and documentation on how to use HuiBoard.
 
-Currently in early prototype stage, but quite useable and powerful. Feedback is very welcome! huiboard-at-gmail-com
+Currently in early prototype stage, but quite useable and powerful. Please consider donating or buying a HuiBoard on our website to support the project. Feedback is very welcome! huiboard-at-gmail-com
 
 * Installation
 ** Linux
