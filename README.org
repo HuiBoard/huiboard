@@ -51,7 +51,13 @@ If you want to use HuiBoard with Emacs and SLIME, or just run it as a background
 
 #+BEGIN_SRC lisp
 (ql:quickload :bordeaux-threads)
-(bt:make-thread 'huim:main-loop "huim")
+(bt:make-thread 'huim:main-loop :name "huim")
+#+END_SRC
+
+The other variable you may need to customize is \star{}dictionary-file-path\star{} which is set to #P"/usr/share/dict/american-english", which is the location on Ubuntu 14.04.
+
+#+BEGIN_SRC lisp
+(setf *dictionary-file-path* #P"/location/of/your/dictionary/file")
 #+END_SRC
 
 Type away!
