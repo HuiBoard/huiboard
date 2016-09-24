@@ -54,7 +54,7 @@ If you want to use HuiBoard with Emacs and SLIME, or just run it as a background
 (bt:make-thread 'huim:main-loop :name "huim")
 #+END_SRC
 
-The other variable you may need to customize is \star{}dictionary-file-path\star{} which is set to #P"/usr/share/dict/american-english", which is the location on Ubuntu 14.04.
+The other variable you may need to customize is \star{}dictionary-file-path\star{} which is #P"/usr/share/dict/american-english" on Ubuntu 14.04, but yours may be different.
 
 #+BEGIN_SRC lisp
 (setf *dictionary-file-path* #P"/location/of/your/dictionary/file")
