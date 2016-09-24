@@ -65,7 +65,9 @@ If you want to use HuiBoard with Emacs and SLIME, or just run it as a background
 (bt:make-thread 'huim:main-loop :name "huim")
 #+END_SRC
 
-
 Type away!
+* TODO Bugs
+- If you get a "junk in string" error when you start typing, just exit and restart the main loop.
+- Repeated letters don't expand to the proper words because of the way proper subsequences are handled.
 
 Feedback and suggestions to huiboard-at-gmail-com.
