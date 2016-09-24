@@ -8,11 +8,10 @@ Currently in early prototype stage, but quite useable and powerful. Feedback is 
 
 * Installation
 ** Linux machine
-Currently tested on Ubuntu 14.04 using SBCL. It should work on any system where xdotool works. Windows, Mac, and Android support coming soon.
+Currently tested on Ubuntu 14.04 using SBCL. Currently the cl-serial dependency requires SBCL. It should work on any system where xdotool can send keystrokes. Windows, Mac, and Android later if there is interest.
 
-You'll need SBCL, Quicklisp, xdotool, and cl-serial to get started. The first three are installable using apt-get. 
+You'll need SBCL, Quicklisp, xdotool, and cl-serial to get started. The first three are installable using apt-get.
 
-On Ubuntu:
 #+BEGIN_SRC sh
 sudo apt-get install sbcl cl-quicklisp xdotool
 #+END_SRC
@@ -21,14 +20,15 @@ Clone both cl-serial and this repository into your quicklisp/local-projects fold
 
 Get cl-serial here: https://github.com/shamazmazum/cl-serial
 
-Then from the SBCL REPL run
+** Arduino
+To set up the Arduino you'll need the Arduino IDE, or your preferred method of flashing.
+* Setup
+From the SBCL REPL run
 #+BEGIN_SRC lisp
 (ql:register-local-projects)
 #+END_SRC
 so Quicklisp can find cl-serial and HuiBoard.
-** Arduino
-To set up the Arduino you'll need the Arduino IDE, or your preferred method of flashing.
-* Running
+
 The HuiBoard Manager package is named :huim. Load it with Quicklisp:
 
 #+BEGIN_SRC lisp
@@ -41,6 +41,12 @@ Then make sure the \star{}serial-port-path\star{} variable points to your Arduin
 (setf huim:*serial-port-path* #P"/dev/ttyACM0")
 #+END_SRC
 
+The other variable you may need to customize is \star{}dictionary-file-path\star{} which is #P"/usr/share/dict/american-english" on Ubuntu 14.04, other versions of Linux may be different.
+
+#+BEGIN_SRC lisp
+(setf huim:*dictionary-file-path* #P"/location/of/your/dictionary/file")
+#+END_SRC
+* Running
 There are then two options for starting the main loop. On a BeagleBone or Rasberry Pi (ARM processors), SBCL is not threaded, so run:
 
 #+BEGIN_SRC lisp
@@ -54,11 +60,6 @@ If you want to use HuiBoard with Emacs and SLIME, or just run it as a background
 (bt:make-thread 'huim:main-loop :name "huim")
 #+END_SRC
 
-The other variable you may need to customize is \star{}dictionary-file-path\star{} which is #P"/usr/share/dict/american-english" on Ubuntu 14.04, but yours may be different.
-
-#+BEGIN_SRC lisp
-(setf *dictionary-file-path* #P"/location/of/your/dictionary/file")
-#+END_SRC
 
 Type away!
 
