@@ -1,6 +1,6 @@
 * HuiBoard
 
-HuiBoard™ is a five or ten key keyboard that is one possible implimentation of the ET Language™. You can think of ET Language as a binary sign language that allows you to type. The system is designed to be mnemonic, fast, efficient, powerful, ergonomic, and easy to learn.
+HuiBoard is a five or ten key keyboard that is one possible implimentation of the ET Language. You can think of ET Language as a binary sign language that allows you to type. The system is designed to be mnemonic, fast, efficient, powerful, ergonomic, and easy to learn.
 
 HuiBoard is powered by Common Lisp and Arduino. You can easily make your own HuiBoard, or buy one from our custom keyboard shop.
 
