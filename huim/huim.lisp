@@ -11,7 +11,7 @@
 (defvar *menu-buffer* nil)
 (defvar *micro-buffer* nil)
 (defvar *menu-hash* (make-hash-table :test 'equal))
-(defvar *freq-file* #P"~/org/keyboard/freqs.txt")
+(defvar *freq-file* #P"freqs.txt")
 (defvar *freq-hash*)
 (defvar *null-vec* #*0000000000)
 (defvar *alphabet* #("(null)" "(delimiter)" "(select)" "o" "(menu)" "c" "e" "t" "(negate)" "r" "w" "k" "n" "u" "y" "j" "i" "p" "s" "g" "b" "q" "x" "z" "m" "v" "d" "f" "l" "h" "a" "(infinity)"))
@@ -242,14 +242,15 @@
 (defun fill-freq-hash ()
   ""
   (let (freqs split)
-    (setf freqs (slurp-file *freq-file*))    
+    (setf freqs *freqs*)    
     (setf *freq-hash* (make-hash-table :test 'equalp))
     (setf freqs (cl-user:split-newlines freqs))
     (loop for x in freqs do
           (when x
             (setf split (cl-user:split-spaces x))
             (setf (gethash (first split) *freq-hash*)
-                  (parse-integer (second split)))))))
+                  (parse-integer (second split))))))
+  (setf *freqs* nil))
 
 (defun freq> (word1 word2)
   "compares the frequencies of two words"

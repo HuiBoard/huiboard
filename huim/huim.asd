@@ -17,7 +17,9 @@
                              )
                 :serial t
                 :components ((:file "package")
-                             (:file "huim")
 			     (:file "rosetta")
 			     (:file "settings")
+			     (:file "freqs")
+			     (:file "huim")
+			     (:file "menu")
 			     ))
