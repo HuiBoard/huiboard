@@ -1,3 +1,5 @@
+;; Word frequencies are from Peter Norvigs site -  http://norvig.com/mayzner.html, specifically the file http://norvig.com/google-books-common-words.txt the contents of which are below.
+
 (in-package #:huim)
 
 (defvar *freqs* "THE 53097401461
